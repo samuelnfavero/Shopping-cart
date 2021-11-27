@@ -1,0 +1,11 @@
+<div class="content">
+    <div class="img" [innerHTML]="product.PRODUCT.image"></div>
+    <aside>
+        <h1>{{ product.PRODUCT.name }}</h1>
+        <h3>Preço: {{ product.PRODUCT.price }}</h3>
+        <button [routerLink]="['/shopping-cart']"
+        (click)="addProduct(product.PRODUCT.id, product.PRODUCT.name, product.PRODUCT.price, product.PRODUCT.image, product.PRODUCT.numberOfProducts)">
+        COMPRAR
+        </button>
+    </aside>
+</div>

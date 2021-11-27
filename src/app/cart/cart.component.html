@@ -1,0 +1,18 @@
+<h1>Carrinho de Compras</h1>
+<h2>Preço Total: {{ this.totalPrice }}</h2>
+<div class="cart">
+<article *ngFor="let product of shoppingCart"> 
+    <h1>
+        <div [innerHTML]="product.image"></div>
+        <p class="name"><a [routerLink]="['/products', product.id]">{{ product.name }}</a></p>
+        {{ product.price }}        
+    </h1>
+    <p>Quantidade: 
+        <img class="cross" src="../assets/setaEsquerda.jpg" width="10px" (click)="removeOneProduct(product.id, product.price, product.numberOfProducts)">
+        <span> {{ product.numberOfProducts }} </span>
+        <img class="cross" src="../assets/setaDireita.jpg" width="10px" (click)="addProduct(product.id, product.name, product.price, product.image, product.numberOfProducts)">
+    </p>
+    <button (click)="removeProduct(product, product.price, product.numberOfProducts)">Remover Produto</button>
+</article>
+</div>
+<button (click)="cleanCart()">Limpar Carrinho</button>

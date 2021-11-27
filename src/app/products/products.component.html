@@ -1,0 +1,18 @@
+<div class="content">
+    <aside>
+        <img src="../assets/anuncio.jpg">
+    </aside>
+    <div class="products">
+        <p class='gridP'>Principais produtos</p>
+        <article  *ngFor="let product of products">
+            <div>
+                <div [innerHTML]="product.PRODUCT.image"></div>
+                <p class="name"><a [routerLink]="['/products', product.PRODUCT.id]">{{ product.PRODUCT.name }}</a></p>
+                <h3 class="price"> <span>R$ {{ product.PRODUCT.price.toFixed(2)}}</span> à vista</h3>
+                <p class="priceDiv">ou R$ {{ product.PRODUCT.price.toFixed(2) }} em até 10x de</p>
+                <p class="priceDiv">R$ {{ (product.PRODUCT.price/10).toFixed(2) }} sem juros</p>
+                <!-- <button (click)="addProduct(product.PRODUCT.id, product.PRODUCT.name, product.PRODUCT.price, product.PRODUCT.image, product.PRODUCT.numberOfProducts)">Adicionar ao carrinho</button> -->
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="modal">
+    <h2>Carrinho de compras</h2>
+    <div class="content">
+        <p *ngIf="productsCount == 0"> Carrinho vazio ...</p>
+        <article *ngFor="let product of shoppingCart | slice:0:3" >
+                <div [innerHTML]="product.image"></div>
+                <h2>{{ product.name }}</h2>
+                <p>Valor: {{ product.price }}</p>
+                <p>Quantidade: {{ product.numberOfProducts}}</p>
+        </article>
+        <a *ngIf="productsCount > 3" [routerLink]="['/shopping-cart'] "><p>Abrir o carrinho completo</p></a>
+    </div>
+    <p>Valor Total: {{ totalPrice }}</p>
+</div>
+

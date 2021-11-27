@@ -3,16 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsService } from './products/products.service';
+import { CartComponent } from './cart/cart.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './header/menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
+import { ShCartModalComponent } from './header/sh-cart-modal/sh-cart-modal.component';
+import { PersistenceService } from './shared/persistence.service';
+
+
+const appRoutes: Routes = [
+  {path:'', component: ProductsComponent},
+  {path:'shopping-cart', component:CartComponent},
+  {path:'products/:id', component: ProductDetailComponent}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsComponent,
+    CartComponent,
+    ProductDetailComponent,
+    HeaderComponent,
+    MenuComponent,
+    FooterComponent,
+    ShCartModalComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ProductsService,
+    PersistenceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

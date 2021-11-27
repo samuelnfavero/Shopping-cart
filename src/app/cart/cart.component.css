@@ -1,0 +1,35 @@
+.cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    justify-content: flex-end;
+    
+}
+
+.cross:hover{
+    cursor: pointer;
+}
+
+.name a{
+    color: rgb(68, 68, 68);
+    font-size: 13px; 
+}
+
+@media screen and (max-width: 768px){
+    .cart{
+    margin:20px;
+    grid-template-columns: 1fr;
+    }
+    article{
+        align-items: center;
+    }
+    button{
+        width:50%;
+    }
+}
