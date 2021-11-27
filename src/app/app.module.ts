@@ -13,12 +13,14 @@ import { MenuComponent } from './header/menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShCartModalComponent } from './header/sh-cart-modal/sh-cart-modal.component';
 import { PersistenceService } from './shared/persistence.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const appRoutes: Routes = [
   {path:'', component: ProductsComponent},
   {path:'shopping-cart', component:CartComponent},
-  {path:'products/:id', component: ProductDetailComponent}
+  {path:'products/:id', component: ProductDetailComponent},
+  {path:'checkout', component:CheckoutComponent}
 ]
 
 @NgModule({
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
     MenuComponent,
     FooterComponent,
     ShCartModalComponent,
+    CheckoutComponent,
     
   ],
   imports: [
