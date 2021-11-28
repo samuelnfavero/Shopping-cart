@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ShCartModalComponent } from './header/sh-cart-modal/sh-cart-modal.component';
 import { PersistenceService } from './shared/persistence.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -39,7 +40,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductsService,
     PersistenceService

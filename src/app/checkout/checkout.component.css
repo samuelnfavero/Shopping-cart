@@ -1,0 +1,15 @@
+.personalData{
+    display:grid;
+    grid-template-columns: 20% 20%;
+    margin: 20px;
+}
+
+.address{
+    display:grid;
+    grid-template-columns: 20% 20% 20%;
+    margin: 20px;
+}
+
+input{
+    margin:10px;
+}
