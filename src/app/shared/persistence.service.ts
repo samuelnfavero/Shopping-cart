@@ -9,8 +9,7 @@ export class PersistenceService {
   constructor() { }
   addToLocalStorage(product: Object, key: string, id: string ){
     let productsList = JSON.parse(localStorage.getItem(key) ?? "[]")
-    console.log(productsList)
-    const _BOLL = productsList.some((prod: { id: string; }) => prod.id == id) //PAROU AQUI
+    const _BOLL = productsList.some((prod: { id: string; }) => prod.id == id) 
     if(_BOLL){
       productsList.find((p: { id: string; }) => p.id == id).numberOfProducts += 1
       localStorage.setItem(key, JSON.stringify(productsList))  
